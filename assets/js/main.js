@@ -32,11 +32,15 @@
 
   async function loadJSON(path) {
     try {
-      const res = await fetch(path);
-      if (!res.ok) throw new Error("Failed to load " + path);
+      var url = path;
+      try {
+        url = new URL(path, document.baseURI || window.location.href).href;
+      } catch (e) {}
+      const res = await fetch(url, { cache: "no-cache" });
+      if (!res.ok) throw new Error("Failed to load " + path + " (" + res.status + ")");
       return await res.json();
     } catch (err) {
-      console.warn("[TMWS]", err.message);
+      console.warn("[TMWS]", err && err.message ? err.message : err);
       return null;
     }
   }
@@ -397,9 +401,11 @@
     var role = member.designation ? String(member.designation).trim() : "";
     var showContact = options.showContact === true;
     var delayClass = options.delayClass || "";
+    var visibleClass = options.startVisible ? " is-visible" : "";
 
     return (
       '<article class="profile-card reveal' +
+      visibleClass +
       (delayClass ? " " + delayClass : "") +
       '">' +
       '<div class="profile-card__photo-wrap">' +
@@ -494,7 +500,7 @@
       escapeHtml(section.id) +
       '-title">' +
       '<div class="container">' +
-      '<header class="committee-section__header reveal">' +
+      '<header class="committee-section__header reveal is-visible">' +
       '<div class="committee-section__icon" aria-hidden="true">' +
       icon +
       "</div>" +
@@ -515,7 +521,7 @@
       section.groups.forEach(function (group) {
         html +=
           '<div class="committee-group">' +
-          '<h3 class="committee-group__title reveal">' +
+          '<h3 class="committee-group__title reveal is-visible">' +
           escapeHtml(group.title) +
           "</h3>" +
           '<div class="committee-grid">' +
@@ -523,6 +529,7 @@
             .map(function (member, i) {
               return renderProfileCard(member, {
                 delayClass: "reveal-delay-" + ((i % 5) + 1),
+                startVisible: true,
               });
             })
             .join("") +
@@ -535,6 +542,7 @@
           .map(function (member, i) {
             return renderProfileCard(member, {
               delayClass: "reveal-delay-" + ((i % 5) + 1),
+              startVisible: true,
             });
           })
           .join("") +
@@ -650,45 +658,61 @@
 
   async function initCommitteePage() {
     const directory = qs("[data-committee-directory]");
-    if (!directory) return;
+    if (!directory) return false;
 
-    const data = await loadJSON("data/committee.json");
-    const loading = qs("[data-committee-loading]");
+    try {
+      const data = await loadJSON("data/committee.json");
 
-    if (!data || !data.sections) {
-      if (loading) {
-        loading.textContent = "Unable to load committee directory.";
+      if (!data || !Array.isArray(data.sections) || !data.sections.length) {
+        directory.innerHTML =
+          '<div class="container">' +
+          '<div class="committee-error" role="alert">' +
+          "<h2>Unable to load the committee directory</h2>" +
+          "<p>We could not load committee data right now. Please refresh the page, or try again in a moment.</p>" +
+          '<a class="btn btn--primary" href="committee.html">Retry</a>' +
+          "</div></div>";
+        return false;
       }
-      return;
-    }
 
-    const intro = qs("[data-committee-intro]");
-    if (intro && data.pageIntro) {
-      intro.textContent = data.pageIntro;
-    }
+      const intro = qs("[data-committee-intro]");
+      if (intro && data.pageIntro) {
+        intro.textContent = data.pageIntro;
+      }
 
-    const jump = qs("[data-committee-jump]");
-    if (jump) {
-      jump.innerHTML = data.sections
-        .map(function (section) {
-          return (
-            '<a class="committee-jump" href="#' +
-            escapeHtml(section.id) +
-            '">' +
-            escapeHtml(section.title) +
-            "</a>"
-          );
+      const jump = qs("[data-committee-jump]");
+      if (jump) {
+        jump.innerHTML = data.sections
+          .map(function (section) {
+            return (
+              '<a class="committee-jump" href="#' +
+              escapeHtml(section.id) +
+              '">' +
+              escapeHtml(section.title) +
+              "</a>"
+            );
+          })
+          .join("");
+      }
+
+      directory.innerHTML = data.sections
+        .map(function (section, index) {
+          return renderCommitteeSection(section, index);
         })
         .join("");
+
+      bindCommitteePhotoFallbacks(directory);
+      return true;
+    } catch (err) {
+      console.warn("[TMWS] Committee render failed:", err);
+      directory.innerHTML =
+        '<div class="container">' +
+        '<div class="committee-error" role="alert">' +
+        "<h2>Something went wrong</h2>" +
+        "<p>The committee directory could not be displayed. Please refresh the page.</p>" +
+        '<a class="btn btn--primary" href="committee.html">Retry</a>' +
+        "</div></div>";
+      return false;
     }
-
-    directory.innerHTML = data.sections
-      .map(function (section, index) {
-        return renderCommitteeSection(section, index);
-      })
-      .join("");
-
-    bindCommitteePhotoFallbacks(directory);
   }
 
   async function initEventsPage() {
@@ -864,42 +888,70 @@
       window.TMWSAnimations.initLazyImages();
     }
 
+    function revealAfterData() {
+      if (window.TMWSAnimations) {
+        window.TMWSAnimations.initReveal();
+      }
+    }
+
     switch (page) {
       case "home":
-        initHome().then(function () {
-          if (window.TMWSAnimations) {
-            window.TMWSAnimations.initReveal();
-            window.TMWSAnimations.initTestimonials();
-          }
-          bindCommitteePhotoFallbacks(document);
-        });
+        // Show static hero reveals immediately; refresh after async data mounts
+        revealAfterData();
+        initHome()
+          .then(function () {
+            revealAfterData();
+            if (window.TMWSAnimations) {
+              window.TMWSAnimations.initTestimonials();
+            }
+            bindCommitteePhotoFallbacks(document);
+          })
+          .catch(function (err) {
+            console.warn("[TMWS] Home init failed:", err);
+            revealAfterData();
+          });
         break;
       case "committee":
-        initCommitteePage().then(function () {
-          if (window.TMWSAnimations) window.TMWSAnimations.initReveal();
-        });
+        revealAfterData();
+        initCommitteePage()
+          .then(function () {
+            revealAfterData();
+          })
+          .catch(function (err) {
+            console.warn("[TMWS] Committee init failed:", err);
+            revealAfterData();
+          });
         break;
       case "events":
-        initEventsPage().then(function () {
-          if (window.TMWSAnimations) window.TMWSAnimations.initReveal();
-        });
+        revealAfterData();
+        initEventsPage()
+          .then(revealAfterData)
+          .catch(function () {
+            revealAfterData();
+          });
         break;
       case "gallery":
-        initGalleryPage().then(function () {
-          if (window.TMWSAnimations) window.TMWSAnimations.initReveal();
-        });
+        revealAfterData();
+        initGalleryPage()
+          .then(revealAfterData)
+          .catch(function () {
+            revealAfterData();
+          });
         break;
       case "news":
-        initNewsPage().then(function () {
-          if (window.TMWSAnimations) window.TMWSAnimations.initReveal();
-        });
+        revealAfterData();
+        initNewsPage()
+          .then(revealAfterData)
+          .catch(function () {
+            revealAfterData();
+          });
         break;
       case "contact":
         initContactForm();
-        if (window.TMWSAnimations) window.TMWSAnimations.initReveal();
+        revealAfterData();
         break;
       default:
-        if (window.TMWSAnimations) window.TMWSAnimations.initReveal();
+        revealAfterData();
         break;
     }
   });

@@ -51,8 +51,9 @@
     });
   }
 
-  function initReveal() {
-    const els = document.querySelectorAll(".reveal");
+  function initReveal(root) {
+    const scope = root && root.querySelectorAll ? root : document;
+    const els = scope.querySelectorAll(".reveal:not(.is-visible)");
     if (!els.length) return;
 
     if (reducedMotion || !("IntersectionObserver" in window)) {
@@ -71,12 +72,40 @@
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.01, rootMargin: "0px 0px -5% 0px" }
     );
 
-    els.forEach(function (el) {
-      observer.observe(el);
+    function revealIfInView(el) {
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      if (rect.bottom > 0 && rect.top < vh) {
+        el.classList.add("is-visible");
+        return true;
+      }
+      return false;
+    }
+
+    // Wait for layout after async HTML injection, then observe / force-visible
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        els.forEach(function (el) {
+          if (revealIfInView(el)) return;
+          observer.observe(el);
+        });
+      });
     });
+
+    // Safety net: never leave content permanently invisible
+    setTimeout(function () {
+      els.forEach(function (el) {
+        if (!el.classList.contains("is-visible")) {
+          el.classList.add("is-visible");
+          try {
+            observer.unobserve(el);
+          } catch (e) {}
+        }
+      });
+    }, 1200);
   }
 
   function initParallax() {
