@@ -1,82 +1,175 @@
-[
-  {
-    "id": "president",
-    "name": "Rajan Nair",
-    "designation": "President",
-    "bio": "Leading TMWS with a focus on community welfare, cultural pride, and inclusive growth for Malayalee families in Tambaram.",
-    "photo": "assets/images/committee/president.svg",
-    "email": "president@tmwsamajam.org",
-    "phone": "+91 98765 43210",
-    "featured": true
-  },
-  {
-    "id": "vice-president",
-    "name": "Lakshmi Menon",
-    "designation": "Vice President",
-    "bio": "Championing educational initiatives and family support programs across the Samajam network.",
-    "photo": "assets/images/committee/vice-president.svg",
-    "email": "vp@tmwsamajam.org",
-    "phone": "",
-    "featured": true
-  },
-  {
-    "id": "secretary",
-    "name": "Sreedevi Pillai",
-    "designation": "Secretary",
-    "bio": "Coordinating operations, member communications, and the annual calendar of cultural and welfare programs.",
-    "photo": "assets/images/committee/secretary.svg",
-    "email": "secretary@tmwsamajam.org",
-    "phone": "+91 98765 43211",
-    "featured": true
-  },
-  {
-    "id": "treasurer",
-    "name": "Anil Kumar",
-    "designation": "Treasurer",
-    "bio": "Ensuring transparent financial stewardship and responsible allocation of community resources.",
-    "photo": "assets/images/committee/treasurer.svg",
-    "email": "treasurer@tmwsamajam.org",
-    "phone": "",
-    "featured": true
-  },
-  {
-    "id": "joint-secretary",
-    "name": "Vijay Raj",
-    "designation": "Joint Secretary",
-    "bio": "Supporting event logistics and strengthening partnerships with local institutions.",
-    "photo": "assets/images/committee/joint-secretary.svg",
-    "email": "",
-    "phone": "",
-    "featured": false
-  },
-  {
-    "id": "cultural",
-    "name": "Meera Gopal",
-    "designation": "Cultural Secretary",
-    "bio": "Curating festivals, performing arts, and heritage programs that celebrate Kerala’s traditions.",
-    "photo": "assets/images/committee/cultural.svg",
-    "email": "culture@tmwsamajam.org",
-    "phone": "",
-    "featured": false
-  },
-  {
-    "id": "youth",
-    "name": "Arjun Suresh",
-    "designation": "Youth Wing Convenor",
-    "bio": "Engaging young members through sports, leadership workshops, and volunteer service.",
-    "photo": "assets/images/committee/youth.svg",
-    "email": "youth@tmwsamajam.org",
-    "phone": "",
-    "featured": false
-  },
-  {
-    "id": "women",
-    "name": "Deepa Pradeep",
-    "designation": "Women's Wing Convenor",
-    "bio": "Building supportive spaces for women through skill sessions, wellness camps, and community outreach.",
-    "photo": "assets/images/committee/women.svg",
-    "email": "women@tmwsamajam.org",
-    "phone": "",
-    "featured": false
-  }
-]
+{
+  "pageIntro": "Meet the dedicated leaders and members who guide Tambaram Malayalee Welfare Samajam with integrity, service, and community spirit.",
+  "sections": [
+    {
+      "id": "office-bearers",
+      "title": "Office Bearers",
+      "description": "The core leadership stewarding TMWS vision, programs, and day-to-day administration.",
+      "icon": "leadership",
+      "members": [
+        {
+          "name": "Shri. Krishnamoorthy",
+          "designation": "Founder President",
+          "photo": "krishnamoorthy.jpg",
+          "bio": "",
+          "featured": true
+        },
+        {
+          "name": "Shri. A. V. Mohanan",
+          "designation": "Vice President",
+          "photo": "mohanan.jpg",
+          "bio": "",
+          "featured": true
+        },
+        {
+          "name": "Shri. Shabin A",
+          "designation": "Secretary",
+          "photo": "shabin.jpg",
+          "bio": "",
+          "featured": true
+        },
+        {
+          "name": "Shri. Kamal Sabarinath",
+          "designation": "Joint Secretary",
+          "photo": "kamal.jpg",
+          "bio": "",
+          "featured": true
+        },
+        {
+          "name": "Shri. Athul M",
+          "designation": "Treasurer",
+          "photo": "athul.jpg",
+          "bio": "",
+          "featured": true
+        }
+      ]
+    },
+    {
+      "id": "public-relations",
+      "title": "Public Relations Officers",
+      "description": "Building bridges between TMWS and the wider community through clear, warm communication.",
+      "icon": "megaphone",
+      "members": [
+        {
+          "name": "Shri. Sethumadhavan",
+          "designation": "Public Relations Officer",
+          "photo": "sethumadhavan.jpg",
+          "bio": ""
+        },
+        {
+          "name": "Shri. Vasudevan P",
+          "designation": "Public Relations Officer",
+          "photo": "vasudevan.jpg",
+          "bio": ""
+        }
+      ]
+    },
+    {
+      "id": "womens-wing-leadership",
+      "title": "Women's Wing Leadership",
+      "description": "Guiding women's programs, welfare initiatives, and member relations with care and vision.",
+      "icon": "heart",
+      "members": [
+        {
+          "name": "Smt. Geetha Venugopal",
+          "designation": "Convener",
+          "photo": "geetha-venugopal.jpg",
+          "bio": ""
+        },
+        {
+          "name": "Smt. Rajitha Asokan",
+          "designation": "Joint Coordinator – Events",
+          "photo": "rajitha.jpg",
+          "bio": ""
+        },
+        {
+          "name": "Smt. Sanjeevani Narayanan",
+          "designation": "Joint Coordinator – Welfare & Member Relations",
+          "photo": "sanjeevani.jpg",
+          "bio": ""
+        }
+      ]
+    },
+    {
+      "id": "executive-committee",
+      "title": "Executive Committee",
+      "description": "Members who shape decisions and support programs across culture, welfare, and community life.",
+      "icon": "people",
+      "members": [
+        { "name": "Shri. Ayyappan", "designation": "", "photo": "ayyappan.jpg", "bio": "" },
+        { "name": "Shri. Adith P K", "designation": "", "photo": "adith.jpg", "bio": "" },
+        { "name": "Shri. Deepak", "designation": "", "photo": "deepak.jpg", "bio": "" },
+        { "name": "Shri. Harikrishnan", "designation": "", "photo": "harikrishnan.jpg", "bio": "" },
+        { "name": "Shri. Vijaykrishnan Nair", "designation": "", "photo": "vijaykrishnan.jpg", "bio": "" },
+        { "name": "Shri. Pradeesh", "designation": "", "photo": "pradeesh.jpg", "bio": "" },
+        { "name": "Shri. Shaju", "designation": "", "photo": "shaju.jpg", "bio": "" }
+      ]
+    },
+    {
+      "id": "womens-wing-executive",
+      "title": "Women's Wing Executive Members",
+      "description": "Committed volunteers advancing women's activities, outreach, and community wellbeing.",
+      "icon": "spark",
+      "members": [
+        { "name": "Smt. Priya Sethu", "designation": "", "photo": "priya-sethu.jpg", "bio": "" },
+        { "name": "Smt. Sujatha", "designation": "", "photo": "sujatha.jpg", "bio": "" },
+        { "name": "Smt. Jeeba Sonu", "designation": "", "photo": "jeeba.jpg", "bio": "" },
+        { "name": "Smt. Sangeetha Ullas", "designation": "", "photo": "sangeetha.jpg", "bio": "" },
+        { "name": "Smt. Geetha Mohan", "designation": "", "photo": "geetha-mohan.jpg", "bio": "" },
+        { "name": "Smt. Sathyabama", "designation": "", "photo": "sathyabama.jpg", "bio": "" },
+        { "name": "Smt. Rejitha Athul", "designation": "", "photo": "rejitha.jpg", "bio": "" },
+        { "name": "Smt. Asha Nair", "designation": "", "photo": "asha-nair.jpg", "bio": "" }
+      ]
+    },
+    {
+      "id": "advisory-council",
+      "title": "Advisory Council",
+      "description": "Experienced voices offering counsel and continuity to the Samajam’s journey.",
+      "icon": "compass",
+      "members": [
+        { "name": "Shri. Surenderan E. V.", "designation": "", "photo": "surenderan.jpg", "bio": "" },
+        { "name": "Shri. Venugopal", "designation": "", "photo": "venugopal.jpg", "bio": "" },
+        { "name": "Shri. Ramachandran P. R.", "designation": "", "photo": "ramachandran.jpg", "bio": "" },
+        { "name": "Shri. Pradeep Kumar", "designation": "", "photo": "pradeep.jpg", "bio": "" },
+        { "name": "Shri. Karvarnan V V", "designation": "", "photo": "karvarnan.jpg", "bio": "" },
+        { "name": "Shri. Nishand Krishnan", "designation": "", "photo": "nishand.jpg", "bio": "" },
+        { "name": "Shri. K. V. Jayakumar", "designation": "", "photo": "jayakumar.jpg", "bio": "" }
+      ]
+    },
+    {
+      "id": "other-responsibilities",
+      "title": "Other Responsibilities",
+      "description": "Specialized roles that keep communications, audit, sports, and public engagement running smoothly.",
+      "icon": "tasks",
+      "groups": [
+        {
+          "title": "Media & Communications",
+          "members": [
+            { "name": "Shri. Adith P K", "designation": "Media & Communications", "photo": "adith.jpg", "bio": "" }
+          ]
+        },
+        {
+          "title": "Internal Auditor",
+          "members": [
+            { "name": "Shri. Vijaykrishnan Nair", "designation": "Internal Auditor", "photo": "vijaykrishnan.jpg", "bio": "" }
+          ]
+        },
+        {
+          "title": "Public Relations",
+          "members": [
+            { "name": "Shri. Sethumadhavan", "designation": "Public Relations", "photo": "sethumadhavan.jpg", "bio": "" },
+            { "name": "Shri. Vasudevan P", "designation": "Public Relations", "photo": "vasudevan.jpg", "bio": "" }
+          ]
+        },
+        {
+          "title": "Sports Committee",
+          "members": [
+            { "name": "Shri. Athul M", "designation": "Sports Committee", "photo": "athul.jpg", "bio": "" },
+            { "name": "Shri. Harikrishnan", "designation": "Sports Committee", "photo": "harikrishnan.jpg", "bio": "" },
+            { "name": "Shri. Pradeesh", "designation": "Sports Committee", "photo": "pradeesh.jpg", "bio": "" }
+          ]
+        }
+      ]
+    }
+  ]
+}

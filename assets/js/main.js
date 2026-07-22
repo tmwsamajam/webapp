@@ -363,44 +363,178 @@
     );
   }
 
-  function renderProfileCard(member) {
+  function committeePhotoPath(photo) {
+    var fallback = "assets/images/committee/default.png";
+    if (!photo) return fallback;
+    if (String(photo).indexOf("/") !== -1) return photo;
+    return "assets/images/committee/" + photo;
+  }
+
+  function sectionIcon(name) {
+    var icons = {
+      leadership:
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>',
+      megaphone:
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11l18-5v12L3 13v-2z"/><path d="M11.6 16.8a4 4 0 01-7.6-1.8V13"/></svg>',
+      heart:
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.8 6.5a5 5 0 00-7.1 0L12 8.2l-1.7-1.7a5 5 0 00-7.1 7.1L12 22.4l8.8-8.8a5 5 0 000-7.1z"/></svg>',
+      people:
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>',
+      spark:
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l1.5 5.5L19 10l-5.5 1.5L12 17l-1.5-5.5L5 10l5.5-1.5L12 3z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"/></svg>',
+      compass:
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5l-2 5-5 2 2-5 5-2z"/></svg>',
+      tasks:
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>',
+    };
+    return icons[name] || icons.people;
+  }
+
+  function renderProfileCard(member, options) {
+    options = options || {};
+    var photo = committeePhotoPath(member.photo);
+    var bio = member.bio ? String(member.bio).trim() : "";
+    var role = member.designation ? String(member.designation).trim() : "";
+    var showContact = options.showContact === true;
+    var delayClass = options.delayClass || "";
+
     return (
-      '<article class="profile-card reveal">' +
+      '<article class="profile-card reveal' +
+      (delayClass ? " " + delayClass : "") +
+      '">' +
+      '<div class="profile-card__photo-wrap">' +
       '<img class="profile-card__photo" src="' +
-      escapeHtml(member.photo) +
+      escapeHtml(photo) +
       '" alt="Portrait of ' +
       escapeHtml(member.name) +
-      '" width="120" height="120" loading="lazy" />' +
+      '" width="180" height="180" loading="lazy" data-committee-photo />' +
+      "</div>" +
       '<h3 class="profile-card__name">' +
       escapeHtml(member.name) +
       "</h3>" +
-      '<span class="profile-card__role">' +
-      escapeHtml(member.designation) +
-      "</span>" +
-      '<p class="profile-card__bio">' +
-      escapeHtml(member.bio) +
-      "</p>" +
-      '<div class="profile-card__contact">' +
-      (member.email
-        ? '<a class="icon-btn" href="mailto:' +
-          escapeHtml(member.email) +
-          '" aria-label="Email ' +
-          escapeHtml(member.name) +
-          '">' +
-          ICONS.mail +
-          "</a>"
+      (role
+        ? '<p class="profile-card__role">' + escapeHtml(role) + "</p>"
+        : '<p class="profile-card__role"></p>') +
+      (bio
+        ? '<p class="profile-card__bio">' + escapeHtml(bio) + "</p>"
+        : '<p class="profile-card__bio"></p>') +
+      (showContact
+        ? '<div class="profile-card__contact">' +
+          (member.email
+            ? '<a class="icon-btn" href="mailto:' +
+              escapeHtml(member.email) +
+              '" aria-label="Email ' +
+              escapeHtml(member.name) +
+              '">' +
+              ICONS.mail +
+              "</a>"
+            : "") +
+          (member.phone
+            ? '<a class="icon-btn" href="tel:' +
+              escapeHtml(String(member.phone).replace(/\s/g, "")) +
+              '" aria-label="Call ' +
+              escapeHtml(member.name) +
+              '">' +
+              ICONS.phone +
+              "</a>"
+            : "") +
+          "</div>"
         : "") +
-      (member.phone
-        ? '<a class="icon-btn" href="tel:' +
-          escapeHtml(member.phone.replace(/\s/g, "")) +
-          '" aria-label="Call ' +
-          escapeHtml(member.name) +
-          '">' +
-          ICONS.phone +
-          "</a>"
-        : "") +
-      "</div></article>"
+      "</article>"
     );
+  }
+
+  function bindCommitteePhotoFallbacks(root) {
+    var fallback = "assets/images/committee/default.png";
+    qsa("[data-committee-photo]", root || document).forEach(function (img) {
+      img.addEventListener("error", function onErr() {
+        img.removeEventListener("error", onErr);
+        if (img.getAttribute("src") !== fallback) {
+          img.src = fallback;
+        }
+      });
+    });
+  }
+
+  function flattenCommitteeMembers(data) {
+    if (!data) return [];
+    if (Array.isArray(data)) return data;
+    var members = [];
+    (data.sections || []).forEach(function (section) {
+      if (section.members) {
+        section.members.forEach(function (m) {
+          members.push(m);
+        });
+      }
+      if (section.groups) {
+        section.groups.forEach(function (group) {
+          (group.members || []).forEach(function (m) {
+            members.push(m);
+          });
+        });
+      }
+    });
+    return members;
+  }
+
+  function renderCommitteeSection(section, index) {
+    var icon = sectionIcon(section.icon);
+    var html =
+      '<section class="committee-section" id="' +
+      escapeHtml(section.id) +
+      '" aria-labelledby="' +
+      escapeHtml(section.id) +
+      '-title">' +
+      '<div class="container">' +
+      '<header class="committee-section__header reveal">' +
+      '<div class="committee-section__icon" aria-hidden="true">' +
+      icon +
+      "</div>" +
+      '<h2 class="committee-section__title" id="' +
+      escapeHtml(section.id) +
+      '-title">' +
+      escapeHtml(section.title) +
+      "</h2>" +
+      '<div class="committee-section__divider" aria-hidden="true"></div>' +
+      (section.description
+        ? '<p class="committee-section__desc">' +
+          escapeHtml(section.description) +
+          "</p>"
+        : "") +
+      "</header>";
+
+    if (section.groups && section.groups.length) {
+      section.groups.forEach(function (group) {
+        html +=
+          '<div class="committee-group">' +
+          '<h3 class="committee-group__title reveal">' +
+          escapeHtml(group.title) +
+          "</h3>" +
+          '<div class="committee-grid">' +
+          (group.members || [])
+            .map(function (member, i) {
+              return renderProfileCard(member, {
+                delayClass: "reveal-delay-" + ((i % 5) + 1),
+              });
+            })
+            .join("") +
+          "</div></div>";
+      });
+    } else {
+      html +=
+        '<div class="committee-grid">' +
+        (section.members || [])
+          .map(function (member, i) {
+            return renderProfileCard(member, {
+              delayClass: "reveal-delay-" + ((i % 5) + 1),
+            });
+          })
+          .join("") +
+        "</div>";
+    }
+
+    html += "</div></section>";
+    return html;
   }
 
   function renderTestimonial(item) {
@@ -485,13 +619,19 @@
 
     const committeeMount = qs("[data-home-committee]");
     if (committeeMount && committee) {
-      committeeMount.innerHTML = committee
+      const featured = flattenCommitteeMembers(committee)
         .filter(function (m) {
           return m.featured;
         })
-        .slice(0, 4)
-        .map(renderProfileCard)
+        .slice(0, 5);
+      committeeMount.innerHTML = featured
+        .map(function (m, i) {
+          return renderProfileCard(m, {
+            delayClass: "reveal-delay-" + ((i % 5) + 1),
+          });
+        })
         .join("");
+      bindCommitteePhotoFallbacks(committeeMount);
     }
 
     const testiMount = qs("[data-home-testimonials]");
@@ -501,11 +641,46 @@
   }
 
   async function initCommitteePage() {
-    const mount = qs("[data-committee-grid]");
-    if (!mount) return;
+    const directory = qs("[data-committee-directory]");
+    if (!directory) return;
+
     const data = await loadJSON("data/committee.json");
-    if (!data) return;
-    mount.innerHTML = data.map(renderProfileCard).join("");
+    const loading = qs("[data-committee-loading]");
+
+    if (!data || !data.sections) {
+      if (loading) {
+        loading.textContent = "Unable to load committee directory.";
+      }
+      return;
+    }
+
+    const intro = qs("[data-committee-intro]");
+    if (intro && data.pageIntro) {
+      intro.textContent = data.pageIntro;
+    }
+
+    const jump = qs("[data-committee-jump]");
+    if (jump) {
+      jump.innerHTML = data.sections
+        .map(function (section) {
+          return (
+            '<a class="committee-jump" href="#' +
+            escapeHtml(section.id) +
+            '">' +
+            escapeHtml(section.title) +
+            "</a>"
+          );
+        })
+        .join("");
+    }
+
+    directory.innerHTML = data.sections
+      .map(function (section, index) {
+        return renderCommitteeSection(section, index);
+      })
+      .join("");
+
+    bindCommitteePhotoFallbacks(directory);
   }
 
   async function initEventsPage() {
@@ -688,6 +863,7 @@
             window.TMWSAnimations.initReveal();
             window.TMWSAnimations.initTestimonials();
           }
+          bindCommitteePhotoFallbacks(document);
         });
         break;
       case "committee":
