@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Community · Culture · Care">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#003d66"/>
+      <stop offset="55%" stop-color="#005B96"/>
+      <stop offset="100%" stop-color="#00A884"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <circle cx="1632" cy="216" r="270" fill="#F4B400" opacity="0.18"/>
+  <circle cx="288" cy="810" r="324" fill="white" opacity="0.08"/>
+  <rect x="153" y="777" width="1612" height="194" rx="16" fill="rgba(255,255,255,0.12)"/>
+  <text x="960" y="518" text-anchor="middle" fill="white" font-family="Poppins,Arial,sans-serif" font-size="106" font-weight="600" opacity="0.95">Community · Culture · Care</text>
+</svg>

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "news-scholarship",
+    "title": "TMWS Announces Education Scholarship Drive",
+    "date": "2026-06-12",
+    "summary": "Applications are open for merit and need-based scholarships supporting school and college students from member families.",
+    "image": "assets/images/events/youth-fest.svg",
+    "featured": true
+  },
+  {
+    "id": "news-medical",
+    "title": "August Medical Camp Registration Begins",
+    "date": "2026-06-01",
+    "summary": "Register early for free consultations covering general medicine, ophthalmology, and basic diagnostic support.",
+    "image": "assets/images/events/medical-camp.svg",
+    "featured": false
+  },
+  {
+    "id": "news-onam",
+    "title": "Onam 2026 Planning Committee Formed",
+    "date": "2026-05-20",
+    "summary": "Volunteers are invited to join cultural, logistics, and hospitality teams for this year’s Onam celebration.",
+    "image": "assets/images/events/onam-2026.svg",
+    "featured": false
+  },
+  {
+    "id": "news-agm",
+    "title": "Annual General Meeting Highlights",
+    "date": "2026-04-15",
+    "summary": "Members reviewed yearly impact, approved new welfare initiatives, and elected coordinators for specialized wings.",
+    "image": "assets/images/gallery/gallery-12.svg",
+    "featured": false
+  },
+  {
+    "id": "news-blood",
+    "title": "Record Turnout at Blood Donation Drive",
+    "date": "2025-11-03",
+    "summary": "Over 120 donors participated, reinforcing TMWS’s commitment to emergency medical readiness in the community.",
+    "image": "assets/images/events/blood-donation.svg",
+    "featured": false
+  }
+]

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="TMWS Logo">
+  <defs>
+    <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#005B96"/>
+      <stop offset="100%" stop-color="#00A884"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#lg)"/>
+  <circle cx="100" cy="100" r="70" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="4"/>
+  <path d="M55 118 L100 55 L145 118 Z" fill="none" stroke="#F4B400" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="100" cy="105" r="18" fill="white" opacity="0.95"/>
+  <text x="100" y="168" text-anchor="middle" fill="white" font-family="Poppins,Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="2">TMWS</text>
+</svg>

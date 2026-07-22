@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Youth Festival">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#005B96"/>
+      <stop offset="55%" stop-color="#1A7AB8"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="680" cy="100" r="125" fill="#F4B400" opacity="0.18"/>
+  <circle cx="120" cy="375" r="150" fill="white" opacity="0.08"/>
+  <rect x="64" y="360" width="672" height="90" rx="16" fill="rgba(255,255,255,0.12)"/>
+  <text x="400" y="240" text-anchor="middle" fill="white" font-family="Poppins,Arial,sans-serif" font-size="44" font-weight="600" opacity="0.95">Youth Festival</text>
+</svg>

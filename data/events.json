@@ -1,0 +1,62 @@
+[
+  {
+    "id": "onam-2026",
+    "title": "Onam Celebration 2026",
+    "date": "2026-09-05",
+    "location": "Tambaram Community Hall",
+    "category": "Cultural",
+    "status": "upcoming",
+    "summary": "A vibrant day of pookalam, traditional feast, cultural performances, and family games celebrating Kerala’s harvest festival.",
+    "image": "assets/images/events/onam-2026.svg"
+  },
+  {
+    "id": "medical-camp-2026",
+    "title": "Free Medical Camp",
+    "date": "2026-08-16",
+    "location": "TMWS Activity Centre",
+    "category": "Medical",
+    "status": "upcoming",
+    "summary": "General health check-ups, specialist consultations, and awareness sessions organized with partner hospitals.",
+    "image": "assets/images/events/medical-camp.svg"
+  },
+  {
+    "id": "youth-fest-2026",
+    "title": "Youth Leadership Fest",
+    "date": "2026-07-26",
+    "location": "Tambaram Indoor Stadium",
+    "category": "Youth",
+    "status": "upcoming",
+    "summary": "Workshops, debates, and team challenges designed to inspire the next generation of community leaders.",
+    "image": "assets/images/events/youth-fest.svg"
+  },
+  {
+    "id": "sports-meet-2025",
+    "title": "Annual Sports Meet",
+    "date": "2025-12-14",
+    "location": "Municipal Grounds, Tambaram",
+    "category": "Sports",
+    "status": "past",
+    "summary": "Track and field events, indoor games, and friendly matches bringing families together in healthy competition.",
+    "image": "assets/images/events/sports-meet.svg"
+  },
+  {
+    "id": "blood-donation-2025",
+    "title": "Blood Donation Drive",
+    "date": "2025-11-02",
+    "location": "TMWS Office Premises",
+    "category": "Welfare",
+    "status": "past",
+    "summary": "Members and neighbours came together to donate blood in partnership with a certified blood bank.",
+    "image": "assets/images/events/blood-donation.svg"
+  },
+  {
+    "id": "cultural-night-2025",
+    "title": "Cultural Night",
+    "date": "2025-10-18",
+    "location": "Town Auditorium",
+    "category": "Cultural",
+    "status": "past",
+    "summary": "An evening of classical and contemporary performances showcasing talent from across the Samajam.",
+    "image": "assets/images/events/cultural-night.svg"
+  }
+]
