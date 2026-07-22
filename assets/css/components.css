@@ -302,59 +302,100 @@
   font-size: var(--fs-sm);
 }
 
-/* Profile Cards */
+/* Profile Cards — Committee directory */
 .profile-card {
   text-align: center;
-  padding: var(--space-8) var(--space-6);
-  background: var(--color-bg-elevated);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: var(--space-8) var(--space-5) var(--space-6);
+  background: var(--color-bg-glass-strong);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-2xl);
+  border-radius: 20px;
   box-shadow: var(--shadow-sm);
   transition: transform var(--duration-base) var(--ease-out),
-    box-shadow var(--duration-base) var(--ease-out);
+    box-shadow var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
 }
 
 .profile-card:hover {
-  transform: translateY(-6px);
+  transform: scale(1.03);
   box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-muted);
+}
+
+.profile-card__photo-wrap {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto var(--space-5);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px var(--color-bg-elevated),
+    0 0 0 7px var(--color-primary-muted),
+    var(--shadow-md);
+  background: var(--color-bg-muted);
 }
 
 .profile-card__photo {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto var(--space-5);
-  border-radius: var(--radius-full);
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 3px solid var(--color-bg);
-  box-shadow: 0 0 0 3px var(--color-primary-muted);
+  display: block;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.profile-card:hover .profile-card__photo {
+  transform: scale(1.08);
 }
 
 .profile-card__name {
-  font-size: var(--fs-lg);
-  margin-bottom: var(--space-1);
+  font-size: var(--fs-md);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-2);
+  letter-spacing: var(--ls-normal);
+  line-height: var(--lh-snug);
 }
 
 .profile-card__role {
-  display: inline-block;
-  font-size: var(--fs-xs);
-  font-weight: var(--font-weight-semibold);
+  display: block;
+  font-size: var(--fs-sm);
+  font-weight: var(--font-weight-medium);
   color: var(--color-primary);
-  background: var(--color-primary-soft);
-  padding: 0.3rem 0.75rem;
-  border-radius: var(--radius-full);
-  margin-bottom: var(--space-4);
+  line-height: var(--lh-snug);
+  margin-bottom: 0;
+  background: none;
+  padding: 0;
+  border-radius: 0;
 }
 
 .profile-card__bio {
   font-size: var(--fs-sm);
   margin-inline: auto;
-  margin-bottom: var(--space-4);
+  margin-top: var(--space-3);
+  margin-bottom: 0;
+  color: var(--color-text-muted);
+  max-width: 28ch;
+}
+
+.profile-card__bio:empty,
+.profile-card__role:empty {
+  display: none;
 }
 
 .profile-card__contact {
   display: flex;
   justify-content: center;
   gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.profile-card__contact:empty {
+  display: none;
 }
 
 /* Event Cards */

@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Committee — TMWS</title>
-  <meta name="description" content="Meet the executive committee of Tambaram Malayalee Welfare Samajam." />
+  <meta name="description" content="Meet the office bearers, executive committee, women's wing, and advisory council of Tambaram Malayalee Welfare Samajam." />
   <link rel="canonical" href="https://tmwsamajam.github.io/webapp/committee.html" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Committee — TMWS" />
-  <meta property="og:description" content="Meet the executive committee of Tambaram Malayalee Welfare Samajam." />
+  <meta property="og:description" content="Meet the office bearers, executive committee, women's wing, and advisory council of Tambaram Malayalee Welfare Samajam." />
   <meta property="og:image" content="assets/images/logo/tmws-logo.svg" />
   <meta property="og:url" content="https://tmwsamajam.github.io/webapp/committee.html" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Committee — TMWS" />
-  <meta name="twitter:description" content="Meet the executive committee of Tambaram Malayalee Welfare Samajam." />
+  <meta name="twitter:description" content="Meet the office bearers, executive committee, women's wing, and advisory council of Tambaram Malayalee Welfare Samajam." />
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" href="assets/images/logo/tmws-logo.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,30 +29,38 @@
       } catch (e) {}
     })();
   </script>
-  
-</head><body data-page="committee">
+</head>
+<body data-page="committee">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="scroll-progress" data-scroll-progress role="presentation"></div>
-  <div class="page-loader" data-page-loader aria-hidden="true"><div class="page-loader__spinner" role="status" aria-label="Loading"></div></div>
+  <div class="page-loader" data-page-loader aria-hidden="true">
+    <div class="page-loader__spinner" role="status" aria-label="Loading"></div>
+  </div>
   <div data-header-mount></div>
+
   <main id="main">
-    <section class="page-hero">
-      <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
+    <section class="committee-hero" aria-labelledby="committee-hero-title">
+      <div class="committee-hero__bg" aria-hidden="true"></div>
+      <div class="container committee-hero__content">
+        <nav class="breadcrumb breadcrumb--light" aria-label="Breadcrumb">
           <a href="index.html">Home</a>
           <span class="breadcrumb__sep" aria-hidden="true">/</span>
-          <span aria-current="page">Executive Committee</span>
+          <span aria-current="page">Committee</span>
         </nav>
-        <h1 class="page-hero__title reveal">Executive Committee</h1>
-        <p class="page-hero__desc reveal">Leaders who serve with integrity — guiding programs, culture, and community care.</p>
+        <p class="section-eyebrow committee-hero__eyebrow reveal">Leadership Directory</p>
+        <h1 id="committee-hero-title" class="committee-hero__title reveal">Our Committee</h1>
+        <p class="committee-hero__intro reveal" data-committee-intro>
+          Meet the dedicated leaders and members who guide Tambaram Malayalee Welfare Samajam with integrity, service, and community spirit.
+        </p>
+        <div class="committee-hero__nav reveal" data-committee-jump aria-label="Jump to committee sections"></div>
       </div>
     </section>
 
-    <section class="section">
+    <div class="committee-directory" data-committee-directory>
       <div class="container">
-        <div class="grid grid--4" data-committee-grid></div>
+        <p class="committee-loading" data-committee-loading>Loading committee directory…</p>
       </div>
-    </section>
+    </div>
   </main>
 
   <div data-footer-mount></div>

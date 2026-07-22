@@ -4,20 +4,20 @@
     "name": "Priya Krishnan",
     "role": "Member since 2018",
     "quote": "TMWS feels like an extended family. The cultural events and welfare support have made Tambaram feel like home for our children.",
-    "avatar": "assets/images/committee/women.svg"
+    "avatar": "assets/images/committee/default.png"
   },
   {
     "id": "t2",
     "name": "Suresh Babu",
     "role": "Volunteer",
     "quote": "From medical camps to relief work, the Samajam organizes with heart and professionalism. Proud to contribute my time here.",
-    "avatar": "assets/images/committee/youth.svg"
+    "avatar": "assets/images/committee/default.png"
   },
   {
     "id": "t3",
     "name": "Anitha Varma",
     "role": "Parent & Member",
-    "quote": "The children’s programs and scholarship guidance have been invaluable. It is a modern community with deep cultural roots.",
-    "avatar": "assets/images/committee/cultural.svg"
+    "quote": "The children\u2019s programs and scholarship guidance have been invaluable. It is a modern community with deep cultural roots.",
+    "avatar": "assets/images/committee/default.png"
   }
 ]
