@@ -1,0 +1,82 @@
+[
+  {
+    "id": "president",
+    "name": "Rajan Nair",
+    "designation": "President",
+    "bio": "Leading TMWS with a focus on community welfare, cultural pride, and inclusive growth for Malayalee families in Tambaram.",
+    "photo": "assets/images/committee/president.svg",
+    "email": "president@tmwsamajam.org",
+    "phone": "+91 98765 43210",
+    "featured": true
+  },
+  {
+    "id": "vice-president",
+    "name": "Lakshmi Menon",
+    "designation": "Vice President",
+    "bio": "Championing educational initiatives and family support programs across the Samajam network.",
+    "photo": "assets/images/committee/vice-president.svg",
+    "email": "vp@tmwsamajam.org",
+    "phone": "",
+    "featured": true
+  },
+  {
+    "id": "secretary",
+    "name": "Sreedevi Pillai",
+    "designation": "Secretary",
+    "bio": "Coordinating operations, member communications, and the annual calendar of cultural and welfare programs.",
+    "photo": "assets/images/committee/secretary.svg",
+    "email": "secretary@tmwsamajam.org",
+    "phone": "+91 98765 43211",
+    "featured": true
+  },
+  {
+    "id": "treasurer",
+    "name": "Anil Kumar",
+    "designation": "Treasurer",
+    "bio": "Ensuring transparent financial stewardship and responsible allocation of community resources.",
+    "photo": "assets/images/committee/treasurer.svg",
+    "email": "treasurer@tmwsamajam.org",
+    "phone": "",
+    "featured": true
+  },
+  {
+    "id": "joint-secretary",
+    "name": "Vijay Raj",
+    "designation": "Joint Secretary",
+    "bio": "Supporting event logistics and strengthening partnerships with local institutions.",
+    "photo": "assets/images/committee/joint-secretary.svg",
+    "email": "",
+    "phone": "",
+    "featured": false
+  },
+  {
+    "id": "cultural",
+    "name": "Meera Gopal",
+    "designation": "Cultural Secretary",
+    "bio": "Curating festivals, performing arts, and heritage programs that celebrate Kerala’s traditions.",
+    "photo": "assets/images/committee/cultural.svg",
+    "email": "culture@tmwsamajam.org",
+    "phone": "",
+    "featured": false
+  },
+  {
+    "id": "youth",
+    "name": "Arjun Suresh",
+    "designation": "Youth Wing Convenor",
+    "bio": "Engaging young members through sports, leadership workshops, and volunteer service.",
+    "photo": "assets/images/committee/youth.svg",
+    "email": "youth@tmwsamajam.org",
+    "phone": "",
+    "featured": false
+  },
+  {
+    "id": "women",
+    "name": "Deepa Pradeep",
+    "designation": "Women's Wing Convenor",
+    "bio": "Building supportive spaces for women through skill sessions, wellness camps, and community outreach.",
+    "photo": "assets/images/committee/women.svg",
+    "email": "women@tmwsamajam.org",
+    "phone": "",
+    "featured": false
+  }
+]

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News — TMWS</title>
+  <meta name="description" content="Latest news and announcements from Tambaram Malayalee Welfare Samajam." />
+  <link rel="canonical" href="https://tmwsamajam.github.io/webapp/news.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="News — TMWS" />
+  <meta property="og:description" content="Latest news and announcements from Tambaram Malayalee Welfare Samajam." />
+  <meta property="og:image" content="assets/images/logo/tmws-logo.svg" />
+  <meta property="og:url" content="https://tmwsamajam.github.io/webapp/news.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="News — TMWS" />
+  <meta name="twitter:description" content="Latest news and announcements from Tambaram Malayalee Welfare Samajam." />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/images/logo/tmws-logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("tmws-theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  
+</head><body data-page="news">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" data-scroll-progress role="presentation"></div>
+  <div class="page-loader" data-page-loader aria-hidden="true"><div class="page-loader__spinner" role="status" aria-label="Loading"></div></div>
+  <div data-header-mount></div>
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb__sep" aria-hidden="true">/</span>
+          <span aria-current="page">News</span>
+        </nav>
+        <h1 class="page-hero__title reveal">News</h1>
+        <p class="page-hero__desc reveal">Announcements, stories, and updates from across the Samajam.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="mb-8" data-news-featured></div>
+        <h2 class="mb-6 reveal">Recent updates</h2>
+        <div class="grid grid--3" data-news-list></div>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer-mount></div>
+  <script src="assets/js/theme.js" defer></script>
+  <script src="assets/js/navigation.js" defer></script>
+  <script src="assets/js/animations.js" defer></script>
+  <script src="assets/js/counter.js" defer></script>
+  <script src="assets/js/gallery.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

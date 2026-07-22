@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events — TMWS</title>
+  <meta name="description" content="Upcoming and past events from Tambaram Malayalee Welfare Samajam." />
+  <link rel="canonical" href="https://tmwsamajam.github.io/webapp/events.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Events — TMWS" />
+  <meta property="og:description" content="Upcoming and past events from Tambaram Malayalee Welfare Samajam." />
+  <meta property="og:image" content="assets/images/logo/tmws-logo.svg" />
+  <meta property="og:url" content="https://tmwsamajam.github.io/webapp/events.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Events — TMWS" />
+  <meta name="twitter:description" content="Upcoming and past events from Tambaram Malayalee Welfare Samajam." />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/images/logo/tmws-logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("tmws-theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  
+</head><body data-page="events">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" data-scroll-progress role="presentation"></div>
+  <div class="page-loader" data-page-loader aria-hidden="true"><div class="page-loader__spinner" role="status" aria-label="Loading"></div></div>
+  <div data-header-mount></div>
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb__sep" aria-hidden="true">/</span>
+          <span aria-current="page">Events</span>
+        </nav>
+        <h1 class="page-hero__title reveal">Events</h1>
+        <p class="page-hero__desc reveal">Celebrate, learn, and serve — explore what’s coming up and what we’ve shared together.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="filter-bar reveal">
+          <div class="search-bar">
+            <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            <input class="search-bar__input" type="search" placeholder="Search events…" data-events-search aria-label="Search events" />
+          </div>
+          <div class="tag-list" role="group" aria-label="Filter by category">
+            <button type="button" class="tag is-active" data-events-filter="all">All</button>
+            <button type="button" class="tag" data-events-filter="Cultural">Cultural</button>
+            <button type="button" class="tag" data-events-filter="Medical">Medical</button>
+            <button type="button" class="tag" data-events-filter="Youth">Youth</button>
+            <button type="button" class="tag" data-events-filter="Sports">Sports</button>
+            <button type="button" class="tag" data-events-filter="Welfare">Welfare</button>
+          </div>
+        </div>
+
+        <h2 class="mb-6 reveal">Upcoming</h2>
+        <div class="grid grid--3 mb-8" data-events-upcoming></div>
+
+        <h2 class="mb-6 reveal">Past events</h2>
+        <div class="grid grid--3 mb-8" data-events-past></div>
+
+        <h2 class="mb-6 reveal">Calendar view</h2>
+        <div class="calendar-list" data-events-calendar></div>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer-mount></div>
+  <script src="assets/js/theme.js" defer></script>
+  <script src="assets/js/navigation.js" defer></script>
+  <script src="assets/js/animations.js" defer></script>
+  <script src="assets/js/counter.js" defer></script>
+  <script src="assets/js/gallery.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

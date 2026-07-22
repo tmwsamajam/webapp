@@ -1,0 +1,86 @@
+[
+  {
+    "id": "g01",
+    "title": "Onam Pookalam",
+    "category": "Cultural",
+    "image": "assets/images/gallery/gallery-01.svg",
+    "alt": "Floral carpet arrangement during Onam"
+  },
+  {
+    "id": "g02",
+    "title": "Community Gathering",
+    "category": "Community",
+    "image": "assets/images/gallery/gallery-02.svg",
+    "alt": "Members gathering at a TMWS event"
+  },
+  {
+    "id": "g03",
+    "title": "Medical Camp Day",
+    "category": "Medical",
+    "image": "assets/images/gallery/gallery-03.svg",
+    "alt": "Volunteers at a medical camp"
+  },
+  {
+    "id": "g04",
+    "title": "Sports Champions",
+    "category": "Sports",
+    "image": "assets/images/gallery/gallery-04.svg",
+    "alt": "Athletes celebrating at sports meet"
+  },
+  {
+    "id": "g05",
+    "title": "Youth Workshop",
+    "category": "Youth",
+    "image": "assets/images/gallery/gallery-05.svg",
+    "alt": "Youth wing workshop session"
+  },
+  {
+    "id": "g06",
+    "title": "Women's Wing Meet",
+    "category": "Women",
+    "image": "assets/images/gallery/gallery-06.svg",
+    "alt": "Women's wing meeting"
+  },
+  {
+    "id": "g07",
+    "title": "Children's Day",
+    "category": "Children",
+    "image": "assets/images/gallery/gallery-07.svg",
+    "alt": "Children participating in activities"
+  },
+  {
+    "id": "g08",
+    "title": "Blood Donation",
+    "category": "Welfare",
+    "image": "assets/images/gallery/gallery-08.svg",
+    "alt": "Blood donation drive"
+  },
+  {
+    "id": "g09",
+    "title": "Cultural Performance",
+    "category": "Cultural",
+    "image": "assets/images/gallery/gallery-09.svg",
+    "alt": "Stage performance at cultural night"
+  },
+  {
+    "id": "g10",
+    "title": "Family Picnic",
+    "category": "Community",
+    "image": "assets/images/gallery/gallery-10.svg",
+    "alt": "Families at a community picnic"
+  },
+  {
+    "id": "g11",
+    "title": "Relief Distribution",
+    "category": "Welfare",
+    "image": "assets/images/gallery/gallery-11.svg",
+    "alt": "Relief materials being distributed"
+  },
+  {
+    "id": "g12",
+    "title": "AGM Moments",
+    "category": "Community",
+    "image": "assets/images/gallery/gallery-12.svg",
+    "alt": "Annual general meeting highlights"
+  }
+]

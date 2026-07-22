@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — TMWS</title>
+  <meta name="description" content="The page you requested could not be found." />
+  <link rel="canonical" href="https://tmwsamajam.github.io/webapp/404.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Page Not Found — TMWS" />
+  <meta property="og:description" content="The page you requested could not be found." />
+  <meta property="og:image" content="assets/images/logo/tmws-logo.svg" />
+  <meta property="og:url" content="https://tmwsamajam.github.io/webapp/404.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Page Not Found — TMWS" />
+  <meta name="twitter:description" content="The page you requested could not be found." />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/images/logo/tmws-logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("tmws-theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  
+</head><body data-page="404">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" data-scroll-progress role="presentation"></div>
+  <div data-header-mount></div>
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="empty-state reveal">
+          <p class="section-eyebrow">Error 404</p>
+          <h1>This page wandered off</h1>
+          <p>The link may be broken, or the page may have moved. Let’s get you back to the community hub.</p>
+          <div class="btn-group flex--center">
+            <a href="index.html" class="btn btn--primary">Go home</a>
+            <a href="contact.html" class="btn btn--outline-dark">Contact us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer-mount></div>
+  <script src="assets/js/theme.js" defer></script>
+  <script src="assets/js/navigation.js" defer></script>
+  <script src="assets/js/animations.js" defer></script>
+  <script src="assets/js/counter.js" defer></script>
+  <script src="assets/js/gallery.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

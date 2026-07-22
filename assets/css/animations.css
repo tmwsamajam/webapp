@@ -1,0 +1,210 @@
+/* ============================================================
+   TMWS Animations — Reveal, Hover, Keyframes, Motion
+   ============================================================ */
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(8px); opacity: 0.6; }
+}
+
+@keyframes imageReveal {
+  from {
+    opacity: 0;
+    clip-path: inset(8% 8% 8% 8% round 1rem);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0 round 1rem);
+  }
+}
+
+/* Scroll reveal defaults */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity var(--duration-slower) var(--ease-out),
+    transform var(--duration-slower) var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal--left {
+  transform: translateX(-32px);
+}
+
+.reveal--left.is-visible {
+  transform: translateX(0);
+}
+
+.reveal--right {
+  transform: translateX(32px);
+}
+
+.reveal--right.is-visible {
+  transform: translateX(0);
+}
+
+.reveal--scale {
+  transform: scale(0.95);
+}
+
+.reveal--scale.is-visible {
+  transform: scale(1);
+}
+
+.reveal-delay-1 { transition-delay: 80ms; }
+.reveal-delay-2 { transition-delay: 160ms; }
+.reveal-delay-3 { transition-delay: 240ms; }
+.reveal-delay-4 { transition-delay: 320ms; }
+.reveal-delay-5 { transition-delay: 400ms; }
+
+/* Hero entrance */
+.hero-animate .hero__brand {
+  animation: fadeDown var(--duration-slower) var(--ease-out) both;
+}
+
+.hero-animate .hero__title {
+  animation: fadeUp var(--duration-slower) var(--ease-out) 120ms both;
+}
+
+.hero-animate .hero__subtitle {
+  animation: fadeUp var(--duration-slower) var(--ease-out) 220ms both;
+}
+
+.hero-animate .hero__actions {
+  animation: fadeUp var(--duration-slower) var(--ease-out) 320ms both;
+}
+
+.hero-animate .hero__scroll {
+  animation: fadeIn var(--duration-slower) var(--ease-out) 600ms both;
+}
+
+.float-soft {
+  animation: float 5s ease-in-out infinite;
+}
+
+.scroll-indicator {
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+/* Page transition */
+.page-enter {
+  animation: fadeUp var(--duration-slow) var(--ease-out) both;
+}
+
+/* Image lazy reveal */
+.img-reveal {
+  opacity: 0;
+}
+
+.img-reveal.is-loaded {
+  animation: imageReveal var(--duration-slower) var(--ease-out) both;
+}
+
+/* Parallax helper */
+.parallax {
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible,
+  .hero-animate .hero__brand,
+  .hero-animate .hero__title,
+  .hero-animate .hero__subtitle,
+  .hero-animate .hero__actions,
+  .hero-animate .hero__scroll,
+  .float-soft,
+  .scroll-indicator,
+  .page-enter,
+  .img-reveal.is-loaded,
+  .sponsors-track__inner {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="480" viewBox="0 0 600 480" role="img" aria-label="Moment 10">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#005B96"/>
+      <stop offset="55%" stop-color="#1A7AB8"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="480" fill="url(#bg)"/>
+  <circle cx="510" cy="96" r="120" fill="#F4B400" opacity="0.18"/>
+  <circle cx="90" cy="360" r="144" fill="white" opacity="0.08"/>
+  <rect x="48" y="345" width="504" height="86" rx="16" fill="rgba(255,255,255,0.12)"/>
+  <text x="300" y="230" text-anchor="middle" fill="white" font-family="Poppins,Arial,sans-serif" font-size="33" font-weight="600" opacity="0.95">Moment 10</text>
+</svg>

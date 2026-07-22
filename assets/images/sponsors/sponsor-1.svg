@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="80" viewBox="0 0 200 80" role="img" aria-label="Kerala Craft">
+  <rect width="200" height="80" rx="12" fill="#F1F5F9"/>
+  <rect x="16" y="24" width="32" height="32" rx="8" fill="#005B96"/>
+  <text x="60" y="46" fill="#1F2937" font-family="Poppins,Arial,sans-serif" font-size="16" font-weight="600">Kerala Craft</text>
+</svg>
