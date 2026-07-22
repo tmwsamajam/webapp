@@ -447,12 +447,20 @@
   function bindCommitteePhotoFallbacks(root) {
     var fallback = "assets/images/committee/default.png";
     qsa("[data-committee-photo]", root || document).forEach(function (img) {
-      img.addEventListener("error", function onErr() {
-        img.removeEventListener("error", onErr);
+      function applyFallback() {
         if (img.getAttribute("src") !== fallback) {
           img.src = fallback;
         }
-      });
+      }
+      img.addEventListener("error", applyFallback);
+      // Handle cached 404s that fire before the listener is attached
+      if (
+        img.complete &&
+        img.naturalWidth === 0 &&
+        img.getAttribute("src") !== fallback
+      ) {
+        applyFallback();
+      }
     });
   }
 
